@@ -3,11 +3,13 @@
   <head>
     <meta charset="utf-8">
     <title>Simple RestApi</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="rest.js"></script>
   </head>
   <body>
+<div class="container">
     <p>
-       <button onclick="GetBooks()">Kaikki kirjat</button>
+       <button class="btn btn-primary" onclick="GetBooks()">Kaikki kirjat</button>
 
        Anna kirjan id
        <input type="text" id="book_id">
@@ -29,7 +31,7 @@
   <p>
      Anna poistettavan kirjan id
      <input type="number" id="delete_id">
-     <button onclick="DeleteBook()">Poista kirja</button>
+     <button class="btn btn-danger" onclick="DeleteBook()">Poista kirja</button>
    </p>
    <p>
       Muokkaa kirja
@@ -45,5 +47,6 @@
       <button onclick="UpdateBook()">Tallenna</button>
   </p>
    <div id="results"></div>
+  </div>
   </body>
 </html>

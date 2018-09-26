@@ -1,6 +1,6 @@
 <?php
 	require "connection.php";
-	$sql = "SELECT name, author FROM Books";
+	$sql = "SELECT name, author, idBooks FROM Books";
 
 	$resultObject = $db->query($sql);
 

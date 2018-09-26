@@ -3,8 +3,8 @@ function GetBooks() {
   var xhttp = new XMLHttpRequest();
   xhttp.open('GET', url, true);
   var jsonData = '';
-  var data = '<table border="1">';
-  data += '<tr><th>Book name</th><th>Author</th></tr>';
+  var data = '<table class="table table-bordered table-hover">';
+  data += '<tr><th>Book name</th><th>Author</th><th>Poista</th></tr>';
   xhttp.onreadystatechange = function() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
       jsonData = JSON.parse(xhttp.responseText);
@@ -14,7 +14,9 @@ function GetBooks() {
           jsonData[x].name +
           '</td><td> ' +
           jsonData[x].author +
-          '</td></tr>';
+          '</td><td><a href="http://localhost/har10/api/delete_books.php?id=' +
+          jsonData[x].idBooks
+          + '">Poista</a></td></tr>';
       }
       data += '</table>';
       document.getElementById('results').innerHTML = data;
